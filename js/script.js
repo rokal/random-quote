@@ -119,7 +119,7 @@ function customCopy(obj) {
 // init content
 printQuote();
 
-setInterval(printQuote, 5000);
+setInterval(printQuote, 30000);
 
 
 
