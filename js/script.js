@@ -36,31 +36,50 @@ var quotes=[
         source:"Proverbe burkinabè"
     }
 ];
+var colors = [
+    "#9C27B0",
+    "#4A148C",
+    "#880E4F",
+    "#2196F3",
+    "#009688",
+    "#004D40",
+    "#00BFA5",
+    "#827717",
+    "#795548",
+    "#BF360C"
+];
 
 /* will be used to all quotes before display any quote for the second time */
-var copyQuotes=[]
+var copyQuotes=[];
 
-function getRandomQuote(quotes){
+function getRandomElement(elements){
     /*
-         shoose random number between 0 and quotes.length-1
+         shoose random number between 0 and elements.length-1
     */
-    var randomNumber=Math.floor(Math.random()*(quotes.length-1));
-    console.log('randomNumber : ' + randomNumber);
-    return quotes[randomNumber];
+    var randomNumber=Math.floor(Math.random()*(elements.length-1));
+    return elements[randomNumber];
 }
+
+function changeBackground(color) {
+    document.getElementById('loadQuote').style.backgroundColor=color;
+    document.getElementsByTagName('body')[0].style.backgroundColor=color;
+}
+
 
 function printQuote(){
     /* if the copyQuotes is empty, then we copy the content of the initial array of quotes in it */
-    if(copyQuotes.length==0){
+    if(copyQuotes.length === 0){
         copyQuotes=customCopy(quotes);
     }
     /* select a randomQuote in the copyQuotes and delete it from the copyQuotes so 
         that next time, we'll shoose different quote 
     */
-    var randomQuote = getRandomQuote(copyQuotes),
+    var randomQuote = getRandomElement(copyQuotes),
         htmlQuote = '';
     var indexOfRandomQuote=copyQuotes.indexOf(randomQuote);
     copyQuotes.splice(indexOfRandomQuote,1);
+
+
     htmlQuote += '<p class="quote"> ' + randomQuote.quote +' </p>'+
                 '<p class="source">' + randomQuote.source;
     if(randomQuote.citation){
@@ -71,11 +90,14 @@ function printQuote(){
     }
     htmlQuote += '</p>';
 
+    /* apply random background and change the content of quote box */ 
+    changeBackground(getRandomElement(colors));
     document.getElementById('quote-box').innerHTML = htmlQuote;
+    /* set a random color style */ 
 }
 /*  function  to copy an object */
 function customCopy(obj) {
-    if(null==obj || "object"!= typeof obj){
+    if(null === obj || "object"!= typeof obj){
         return obj;
     }else{
         var copy=obj.constructor();
