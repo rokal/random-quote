@@ -34,9 +34,16 @@ var quotes=[
     {
         quote:"Celui qui ne dit rien est plus sage que celui qui dit cent paroles.",
         source:"Proverbe burkinabè"
+    },
+    {
+        quote:"You can do anything but not everything",
+        source:"David Allen",
+        citation:"Making It All Work",
+        year:2009
     }
 ];
 var colors = [
+    "#36b55c",
     "#9C27B0",
     "#4A148C",
     "#880E4F",
@@ -108,6 +115,11 @@ function customCopy(obj) {
 
     }
 }
+
+// init content
+printQuote();
+
+setInterval(printQuote, 5000);
 
 
 
