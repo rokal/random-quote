@@ -36,11 +36,6 @@ var quotes=[
         source:"Proverbe burkinabè"
     },
     {
-        quote:"Os que chèvre croise, chien ne croise jamais ça.",
-        source:"Proverbe burkinabè",
-        citation:"Roland Kalmogo"
-    },
-    {
         quote:"You can do anything but not everything",
         source:"David Allen",
         citation:"Making It All Work",
