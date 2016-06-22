@@ -2,9 +2,9 @@
 
 This is a simple javascript project to randomly choose a quote from a list, display it with a random background color. 
 The main goal is to learn how to deal with some plain javascript features:
-. basic JavaScript syntax,
-. loops,
-. object literals
+1. basic JavaScript syntax,
+2. loops,
+3. object literals
 
 ---
 
